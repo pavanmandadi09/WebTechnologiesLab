@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+
+    <!-- Internal CSS styling -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(115, 208, 129, 0.8), #2a5298);
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            max-width: 450px;
+            width: 90%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1e3c72;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333333;
+            font-weight: 600;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 5px;
+            border: 1px solid #cccccc;
+            font-size: 14px;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #2a5298;
+            box-shadow: 0 0 3px rgba(42, 82, 152, 0.6);
+        }
+
+        .btn-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            flex: 1;
+            padding: 10px 15px;
+            font-size: 15px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn-primary {
+            background-color: #08f00f;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3c72;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: #e0e0e0;
+            color: #333333;
+        }
+
+        .btn-secondary:hover {
+            background-color: #cfcfcf;
+            transform: translateY(-1px);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .hint {
+            font-size: 12px;
+            color: #777777;
+            margin-top: 3px;
+        }
+
+                .success-box {
+            display: none; /* hidden by default */
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 15px;
+            border-radius: 10px;
+            background-color: #e6f9ec;
+            border: 1px solid #46a86b;
+            color: #2f6f45;
+        }
+
+        .success-icon {
+            margin: 0 auto 10px auto;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #46a86b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .checkmark {
+            width: 24px;
+            height: 12px;
+            border-left: 4px solid #ffffff;
+            border-bottom: 4px solid #ffffff;
+            transform: rotate(-45deg);
+            margin-top: -4px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>VIT-AP Registration Form</h1>
+
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div class="form-group">
+                <label for="roll">Registration Number:</label>
+                <input
+                    type="text"
+                    id="roll"
+                    name="roll"
+                    pattern="\d{2}[A-Z]{3}\d{4}"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="mobile">Mobile Number:</label>
+                <input type="text" id="mobile" name="mobile">
+            </div>
+
+            <div class="form-group">
+                <label for="gmail">Gmail ID:</label>
+                <input type="text" id="gmail" name="gmail">
+            </div>
+
+            <div class="btn-row">
+                <button type="submit" class="btn-primary">Submit</button>
+                <br>
+
+                <!-- Home / Back button -->
+                <a href="index.html">
+                    <button type="button" class="btn-secondary">Back to Home</button>
+                </a>
+            </div>
+        </form>
+        <!-- Success message box (hidden by default) -->
+        <div id="successBox" class="success-box">
+            <div class="success-icon">
+                <span class="checkmark"></span>
+            </div>
+            <h2>Registration Successful</h2>
+            <p>Your details have been submitted successfully.</p>
+        </div>
+    </div>
+
+    <!-- Link JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
