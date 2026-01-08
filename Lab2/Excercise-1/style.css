@@ -1,0 +1,16 @@
+/* Simple styling for page and canvas */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+#myCanvas {
+  border: 1px solid #000000;
+  background-color: #e2f159;
+}

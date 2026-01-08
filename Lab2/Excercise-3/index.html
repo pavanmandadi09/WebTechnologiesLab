@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advanced Drag & Drop Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Drag & Drop Task Manager</h1>
+
+  <div class="task-input">
+    <input type="text" id="taskName" placeholder="Enter task name">
+    <button id="addTaskBtn">Add Task</button>
+  </div>
+
+  <div class="board">
+    <div class="column" id="todo" data-status="todo">
+      <h2>To Do</h2>
+      <div class="column-body"></div>
+    </div>
+
+    <div class="column" id="inprogress" data-status="inprogress">
+      <h2>In Progress</h2>
+      <div class="column-body"></div>
+    </div>
+
+    <div class="column" id="completed" data-status="completed">
+      <h2>Completed</h2>
+      <div class="column-body"></div>
+    </div>
+  </div>
+
+  <p id="message" class="message"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
