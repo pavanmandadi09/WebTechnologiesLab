@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Stage Form Workflow</title>
+    <link rel="stylesheet" href="style.css"> <style>
+        .form-stage { display: none; }
+        .form-stage.active { display: block; }
+        .progress-container { width: 100%; background: #eee; margin-bottom: 20px; }
+        #progress-bar { height: 10px; background: #4CAF50; width: 25%; transition: 0.3s; }
+        .error { color: red; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+
+    <div class="workflow-container">
+        <h2>User Registration</h2>
+        
+        <div class="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <form id="multiStageForm">
+            <div class="form-stage active" data-stage="1">
+                <h3>Stage 1: Account Details</h3>
+                <input type="text" id="username" placeholder="Username (min 5 chars)" required>
+                <p id="err-1" class="error"></p>
+            </div>
+
+            <div class="form-stage" data-stage="2">
+                <h3>Stage 2: Personal Information</h3>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <p id="err-2" class="error"></p>
+            </div>
+
+            <div class="form-stage" data-stage="3">
+                <h3>Stage 3: Security</h3>
+                <input type="password" id="password" placeholder="Password (min 8 chars)" required>
+                <p id="err-3" class="error"></p>
+            </div>
+
+            <div class="form-stage" data-stage="4">
+                <h3>Stage 4: Review & Confirm</h3>
+                <p>Click submit to finalize your registration.</p>
+                <div id="summary"></div>
+            </div>
+
+            <div class="controls">
+                <button type="button" id="prevBtn" disabled>Previous</button>
+                <button type="button" id="nextBtn">Next</button>
+                <button type="submit" id="submitBtn" style="display:none;">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time User Activity Monitor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Layout: Left for interaction, Right for logs */
+        .container {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 { margin-top: 0; }
+
+        /* Interactive Elements */
+        .input-group { margin-bottom: 15px; }
+        input, button {
+            padding: 10px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        /* The specific container to test capturing vs bubbling */
+        #captureZone {
+            padding: 20px;
+            border: 2px dashed #007BFF;
+            background-color: #e9f5ff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Warning Banner */
+        #warningBanner {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 5px;
+            display: none; /* Hidden by default */
+            margin-bottom: 20px;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+
+        /* Log Panel Styling */
+        #logPanel {
+            height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            background-color: #333;
+            color: #0f0; /* Matrix green style */
+            font-family: monospace;
+            padding: 10px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+
+        .log-entry { margin-bottom: 4px; border-bottom: 1px solid #444; padding-bottom: 2px; }
+        .log-timestamp { color: #888; margin-right: 10px; }
+        .log-type { color: #fff; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Activity Playground</h2>
+        
+        <div id="warningBanner">⚠️ SUSPICIOUS ACTIVITY DETECTED: CLICK FLOODING ⚠️</div>
+
+        <p>Interact with these elements to generate logs:</p>
+
+        <div id="captureZone">
+            <strong>Capture/Bubble Zone</strong><br>
+            <button id="testBtn">Click Me</button>
+        </div>
+
+        <div class="input-group">
+            <input type="text" placeholder="Focus here & type..." id="inputField">
+        </div>
+
+        <hr>
+        <h3>Controls</h3>
+        <button id="exportBtn" style="background-color: #28a745; color: white;">Export Log</button>
+        <button id="resetBtn" style="background-color: #dc3545; color: white;">Reset Log</button>
+    </div>
+
+    <div class="container">
+        <h2>Live Event Log</h2>
+        <div id="logPanel"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
