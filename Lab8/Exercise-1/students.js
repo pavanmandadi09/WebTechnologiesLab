@@ -1,7 +1,7 @@
-let studentName = "Arun";
-let mark1 = 85;
+let studentName = "Pavan";
+let mark1 = 72;
 let mark2 = 90;
-let mark3 = 88;
+let mark3 = 81;
 
 const calculateAverage = (m1, m2, m3) => {
     return (m1 + m2 + m3) / 3;
